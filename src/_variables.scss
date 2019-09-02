@@ -1,0 +1,19 @@
+$nixie:'Nixie One', cursive;
+$poiret:'Poiret One', cursive;
+$themes:(
+    "darkone":#006064,
+    "darktwo":#00695c,
+    "darkthree":#00838f,
+    "darkfour":#00796b,
+    "txtcolor":#fafafa
+);
+
+$txttwo:3.5rem;
+$txtone:4rem;
+$titlles:3rem;
+$mtitle:1.9rem;
+$lines:1.5rem;
+$size:100px;
+$image:100%;
+$breakpoints: (phone: 300px, 
+               tablet: 992px) !default;

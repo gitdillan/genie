@@ -1,0 +1,91 @@
+<app-header></app-header>
+<header></header>
+<section class="home">
+    <div class="container">
+    <h3>Genie is here!</h3>
+        <h1>Intuitive! Creative!! Tireless!!!</h1>
+    </div>
+</section>
+<section class="about">
+        <div class="container">
+    <h2>GENIE-US</h2>
+    <p class="lead">Genie collaborates to produce exceptional web services for your company</p>
+    <p>Genie is here to tread a new path defined by latest technologies and new concepts. Intuitive, innovative and always abreast with latest trends. Genie is young and enthusiastic with fresh ideas and energy, always exceeding your expectations. See the magic of Genie in all the web products that capture the ethos of next gen digital culture.</p>
+    </div>
+</section>
+<section class="services">
+    <div class="container">
+    <h2>GENIE MAGICS</h2>
+    <p class="lead">Genie always exceeds your expectations</p>
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let scontent of magics" >
+            <div class="service">
+                <span><img src="../../../assets/svgs/{{scontent.micon}}"></span>
+                <h4>{{scontent.mname}}</h4>
+                <p>{{scontent.mcontent}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<section class="contact">
+        <div class="container">
+    <h2>KNOW GENIE</h2>
+    <p class="lead">Let Genie work with You</p>
+  
+    <form class="contact-form" [formGroup]="ContactForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <table class="contact-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="contact-full-width">
+            <input matInput placeholder="First name" formControlName="firstname">
+            <mat-error *ngIf="lamp.firstname.hasError('required')">
+                First Name <strong>required</strong>
+              </mat-error>
+          </mat-form-field></td>
+          <td><mat-form-field class="contact-full-width">
+            <input matInput placeholder="Last Name" formControlName="secondname">
+              <mat-error *ngIf="lamp.secondname.hasError('required')">
+                Last Name <strong>required</strong>
+              </mat-error>
+          </mat-form-field></td>
+        </tr></table>
+    </div>
+    <div class="form-group">
+        <mat-form-field class="contact-full-width">
+             <input type="email" matInput placeholder="Email" formControlName="email"> 
+                <mat-error *ngIf="lamp.email.hasError('email') && !lamp.email.hasError('required')">
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="lamp.email.hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+          </mat-form-field>
+          
+    </div>
+    <div class="form-group">
+        <mat-form-field class="contact-full-width">
+            <span matPrefix>+91 &nbsp;</span>
+            <input type="tel" matInput placeholder="Mobile Number" formControlName="phonenumber">
+            <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
+            <mat-error *ngIf="lamp.phonenumber.hasError('required')">
+                Phone Number is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+    </div>
+    <div class="form-group">
+        <mat-form-field class="contact-full-width">
+            <input matInput #message maxlength="250" placeholder="Message" formControlname="message">
+            <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+            <mat-hint align="end">{{message.value.length}} / 250</mat-hint>
+            <mat-error *ngIf="lamp.message.hasError('required')">
+                Phone Number is <strong>required</strong>
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <button mat-flat-button color="primary">Submit</button>
+      </form>
+      
+    </div>
+</section>
+<app-footer></app-footer>

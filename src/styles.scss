@@ -1,0 +1,29 @@
+@import 'variables';
+html, body { height: 100%; }
+body { margin: 0; font:100% $nixie; }
+h1,h2,h3,h4{font:100% $poiret;}
+
+
+%sections{width:100%; height:100%; display: flex; position: relative;padding: 3rem 0; overflow: hidden;color:map-get($themes,"txtcolor"); line-height: $lines; align-items: center;} 
+.home{background-color:map-get($themes,"darkone"); text-align: center;
+    h3{font-size: $txttwo;}
+    h1{font-size: $txtone}
+}
+.about{background-color:map-get($themes,"darktwo");
+.lead{margin-bottom:2%;}
+}
+.services{background-color:map-get($themes,"darkthree"); text-align: center;
+.service{padding: 1rem;
+span{width: $size;height: $size; margin-bottom: 1rem;line-height:$size; display:inline-block; border-radius: $size/2; background:rgba( map-get($themes,"txtcolor"), .7 );}
+}
+.lead{margin-bottom:10%;}
+h4{font-size: $mtitle;}
+img{width: $image - 30%;}
+}
+.contact{background-color:map-get($themes,"darkfour");text-align: right;
+.lead{margin-bottom:5%;}}
+section{@extend %sections; h2{font-size: $titlles}}  
+
+
+
+
